@@ -1,18 +1,27 @@
+use std::collections::HashMap;
+use std::env;
+
 mod one;
 mod two;
 mod three;
 mod four;
 
 fn main() {
-    one::challenge_one_part_one();
-    one::challenge_one_part_two();
+    let args: Vec<String> = env::args().collect();
+    let challenge = args
+        .get(1)
+        .expect("Add the challenge name e.g. 'one' after the command");
 
-    two::challenge_two_part_one();
-    two::challenge_two_part_two();
+    let challenges = HashMap::from([
+        ("one", one::challenge_one as fn()),
+        ("two", two::challenge_two as fn()),
+        ("three", three::challenge_three as fn()),
+        ("four", four::challenge_four as fn())
+    ]);
 
-    three::challenge_three_part_one();
-    // three::challenge_three_part_two();
+    let challenge_fn = challenges
+        .get(challenge.as_str())
+        .expect(&format!("Unknown event name '{}'", &challenge));
 
-    four::challenge_four_part_one();
-    four::challenge_four_part_two();
+    challenge_fn();
 }

@@ -99,3 +99,8 @@ pub fn challenge_three_part_two() {
     let result = oxygen[0] * co2[0];
     println!("Challenge three part two: {}", result)
 }
+
+pub fn challenge_three() {
+    challenge_three_part_one();
+    challenge_three_part_two();
+}

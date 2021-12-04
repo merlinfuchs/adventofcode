@@ -93,9 +93,8 @@ pub fn challenge_four_part_one() {
     let (moves, fields) = get_input();
     let scores = get_field_scores(moves, fields, 1);
 
-    for (field, (move_count, score)) in scores {
-        println!("Challenge four part one: board {} after {} moves with a score of {}", field, move_count, score)
-    }
+    let (field, (move_count, score)) = scores.iter().next().unwrap();
+    println!("Challenge four part one: board {} after {} moves with a score of {}", field, move_count, score)
 }
 
 pub fn challenge_four_part_two() {
@@ -110,4 +109,9 @@ pub fn challenge_four_part_two() {
 
     let (field, (move_count, score)) = sorted_scores[sorted_scores.len() - 1];
     println!("Challenge four part one: board {} after {} moves with a score of {}", field, move_count, score)
+}
+
+pub fn challenge_four() {
+    challenge_four_part_one();
+    challenge_four_part_two();
 }

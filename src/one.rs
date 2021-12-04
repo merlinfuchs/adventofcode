@@ -34,7 +34,7 @@ fn count_increases(values: &Vec<usize>, window_size: usize) -> usize {
 pub fn challenge_one_part_one() {
     let values = get_input();
 
-    let mut result = count_increases(&values, 1);
+    let result = count_increases(&values, 1);
 
     println!("Challenge one part one: {}", result)
 }
@@ -42,7 +42,12 @@ pub fn challenge_one_part_one() {
 pub fn challenge_one_part_two() {
     let values = get_input();
 
-    let mut result = count_increases(&values, 3);
+    let result = count_increases(&values, 3);
 
     println!("Challenge one part two: {}", result)
+}
+
+pub fn challenge_one() {
+    challenge_one_part_one();
+    challenge_one_part_two();
 }

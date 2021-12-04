@@ -54,3 +54,8 @@ pub fn challenge_two_part_two() {
     let result = position * depth;
     println!("Challenge two part two: {}", result)
 }
+
+pub fn challenge_two() {
+    challenge_two_part_one();
+    challenge_two_part_two();
+}
