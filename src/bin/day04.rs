@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::fs;
 
 fn get_input() -> (Vec<usize>, Vec<Vec<Vec<usize>>>) {
-    let input = fs::read_to_string("./input/four.txt").unwrap();
+    let input = fs::read_to_string("./input/day04.txt").unwrap();
 
     let sections: Vec<&str> = input
         .split("\n\n")
@@ -111,7 +111,7 @@ pub fn challenge_four_part_two() {
     println!("Challenge four part one: board {} after {} moves with a score of {}", field, move_count, score)
 }
 
-pub fn challenge_four() {
+fn main() {
     challenge_four_part_one();
     challenge_four_part_two();
 }

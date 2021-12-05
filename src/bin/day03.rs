@@ -1,7 +1,7 @@
 use std::fs;
 
 fn get_input() -> (usize, Vec<usize>) {
-    let input = fs::read_to_string("./input/three.txt").unwrap();
+    let input = fs::read_to_string("./input/day03.txt").unwrap();
 
     let mut bit_length = 0;
     let values = input
@@ -100,7 +100,7 @@ pub fn challenge_three_part_two() {
     println!("Challenge three part two: {}", result)
 }
 
-pub fn challenge_three() {
+fn main() {
     challenge_three_part_one();
     challenge_three_part_two();
 }

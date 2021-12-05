@@ -52,7 +52,7 @@ impl Line {
 }
 
 fn get_input() -> Vec<Line> {
-    let input = fs::read_to_string("./input/five.txt").unwrap();
+    let input = fs::read_to_string("./input/day05.txt").unwrap();
 
     let raw_lines: Vec<&str> = input
         .split("\n")
@@ -125,7 +125,7 @@ pub fn challenge_five_part_two() {
     println!("Challenge five part two: {}", count)
 }
 
-pub fn challenge_five() {
+fn main() {
     challenge_five_part_one();
     challenge_five_part_two();
 }

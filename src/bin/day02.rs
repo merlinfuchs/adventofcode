@@ -1,7 +1,7 @@
 use std::fs;
 
 fn get_input() -> Vec<(String, usize)> {
-    let input = fs::read_to_string("./input/two.txt").unwrap();
+    let input = fs::read_to_string("./input/day02.txt").unwrap();
     input
         .split("\n")
         .filter(|v| !v.is_empty())
@@ -55,7 +55,7 @@ pub fn challenge_two_part_two() {
     println!("Challenge two part two: {}", result)
 }
 
-pub fn challenge_two() {
+fn main() {
     challenge_two_part_one();
     challenge_two_part_two();
 }
