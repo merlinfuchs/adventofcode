@@ -5,6 +5,7 @@ mod one;
 mod two;
 mod three;
 mod four;
+mod five;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -13,10 +14,11 @@ fn main() {
         .expect("Add the challenge name e.g. 'one' after the command");
 
     let challenges = HashMap::from([
-        ("one", one::challenge_one as fn()),
-        ("two", two::challenge_two as fn()),
-        ("three", three::challenge_three as fn()),
-        ("four", four::challenge_four as fn())
+        ("1", one::challenge_one as fn()),
+        ("2", two::challenge_two as fn()),
+        ("3", three::challenge_three as fn()),
+        ("4", four::challenge_four as fn()),
+        ("5", five::challenge_five as fn())
     ]);
 
     let challenge_fn = challenges
