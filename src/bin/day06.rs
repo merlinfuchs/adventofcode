@@ -9,24 +9,6 @@ fn get_input() -> Vec<u8> {
         .collect()
 }
 
-pub fn old_simulate_fish_population(fish: &[u8], days: usize) -> usize {
-    let mut vec = fish.to_vec();
-
-    for _ in 0..days {
-        for i in 0..vec.len() {
-            let val = vec[i];
-            if val == 0 {
-                vec[i] = 6;
-                vec.push(8);
-            } else {
-                vec[i] -= 1;
-            }
-        }
-    }
-
-    return vec.len();
-}
-
 pub fn simulate_fish_population(fish: &[u8], days: usize) -> usize {
     let mut counts = [0usize; 9];
 
@@ -50,7 +32,7 @@ pub fn challenge_six_part_one() {
 
 pub fn challenge_six_part_two() {
     let mut fish = get_input();
-    let result = old_simulate_fish_population(&fish, 256);
+    let result = simulate_fish_population(&fish, 256);
 
     println!("Challenge six part two: {}", result)
 }
