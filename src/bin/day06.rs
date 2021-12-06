@@ -24,14 +24,14 @@ pub fn simulate_fish_population(fish: &[u8], days: usize) -> usize {
 }
 
 pub fn challenge_six_part_one() {
-    let mut fish = get_input();
+    let fish = get_input();
     let result = simulate_fish_population(&fish, 80);
 
     println!("Challenge six part one: {}", result)
 }
 
 pub fn challenge_six_part_two() {
-    let mut fish = get_input();
+    let fish = get_input();
     let result = simulate_fish_population(&fish, 256);
 
     println!("Challenge six part two: {}", result)
