@@ -10,24 +10,17 @@ fn get_input() -> Vec<i32> {
 }
 
 pub fn challenge_seven_part_one() {
-    let positions = get_input();
-    let mut cheapest = 0;
+    let mut positions = get_input();
+    positions.sort();
 
-    let min = *positions.iter().min().unwrap();
-    let max = *positions.iter().max().unwrap();
+    let median = positions[positions.len() / 2];
 
-    for i in min..=max {
-        let mut fuel = 0;
-        for pos in positions.iter().copied() {
-            fuel += (pos - i).abs();
-        }
+    let result: i32 = positions
+        .into_iter()
+        .map(|p| (p - median).abs())
+        .sum();
 
-        if cheapest == 0 || fuel < cheapest {
-            cheapest = fuel;
-        }
-    }
-
-    println!("Challenge seven part one: {}", cheapest)
+    println!("Challenge seven part one: {}", result)
 }
 
 pub fn challenge_seven_part_two() {
