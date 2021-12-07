@@ -1,6 +1,6 @@
 use std::fs;
 
-fn get_input() -> Vec<u32> {
+fn get_input() -> Vec<i32> {
     let input = fs::read_to_string("./input/day07.txt").unwrap();
 
     input
@@ -19,7 +19,7 @@ pub fn challenge_seven_part_one() {
     for i in min..=max {
         let mut fuel = 0;
         for pos in positions.iter().copied() {
-            fuel += if i > pos { i - pos } else { pos - i }
+            fuel += (pos - i).abs();
         }
 
         if cheapest == 0 || fuel < cheapest {
@@ -40,7 +40,7 @@ pub fn challenge_seven_part_two() {
     for i in min..=max {
         let mut fuel = 0;
         for pos in positions.iter().copied() {
-            let diff = if i > pos { i - pos } else { pos - i };
+            let diff = (pos - i).abs();
             fuel += (diff * (diff + 1)) / 2;
         }
 
